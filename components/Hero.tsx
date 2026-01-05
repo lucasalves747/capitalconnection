@@ -37,11 +37,11 @@ export const Hero: React.FC = () => {
               </div>
               <div className="flex items-center bg-white px-3 py-2 rounded-full shadow-sm border">
                 <Coffee className="w-4 h-4 text-blue-600 mr-2" />
-                Coffee Break
+                Coquetel
               </div>
               <div className="flex items-center bg-white px-3 py-2 rounded-full shadow-sm border">
                 <Clock className="w-4 h-4 text-blue-600 mr-2" />
-                Imersão 3.5h
+                Imersão 3h
               </div>
             </div>
 
