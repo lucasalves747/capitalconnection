@@ -2,7 +2,7 @@ import React from 'react';
 
 export const About: React.FC = () => {
   return (
-    <section id="sobre" className="py-14 sm:py-20 bg-white">
+    <section id="sobre" className="py-10 sm:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center">
 
@@ -30,8 +30,8 @@ export const About: React.FC = () => {
             </strong>
           </p>
 
-          <div className="mt-8 sm:mt-10 inline-block p-5 sm:p-6 bg-slate-50 rounded-2xl border border-slate-100">
-            <p className="text-sm sm:text-base text-slate-700 italic leading-relaxed">
+          <div className="mt-8 sm:mt-10 inline-block p-5 sm:p-6 bg-slate-200 rounded-2xl border border-slate-100">
+            <p className="text-sm sm:text-base text-slate-900 italic leading-relaxed">
               "O evento nasce da evolução do Jantar de Negócios, mantendo o mesmo espírito
               de conexão e transformação, agora com mais foco, intensidade e objetividade."
             </p>

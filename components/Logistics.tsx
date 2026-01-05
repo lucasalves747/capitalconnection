@@ -17,7 +17,7 @@ export const Logistics: React.FC = () => {
       {/* QUEM */}
       <section
         id="quem"
-        className="relative py-14 sm:py-20 overflow-hidden"
+        className="relative py-6 sm:py-20 overflow-hidden"
       >
         {/* Background */}
         <div
@@ -112,7 +112,7 @@ export const Logistics: React.FC = () => {
       </section>
 
       {/* FORMATO */}
-      <section id="contato" className="py-14 sm:py-20 bg-blue-600">
+      <section id="contato" className="py-6 sm:py-20 bg-blue-600">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-3">

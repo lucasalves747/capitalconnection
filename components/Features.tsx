@@ -111,7 +111,7 @@ export const Features: React.FC = () => {
     <>
        <section
       id="experiencia"
-      className="relative py-14 sm:py-20"
+      className="relative py-6 sm:py-20"
     >
       {/* Background */}
       <div
@@ -159,7 +159,7 @@ export const Features: React.FC = () => {
     </section>
 
       {/* PILLARS */}
-      <section id="pilares" className="py-14 sm:py-20 bg-white">
+      <section id="pilares" className="py-6 sm:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10 sm:mb-14">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-3">
