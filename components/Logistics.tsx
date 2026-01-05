@@ -159,11 +159,11 @@ export const Logistics: React.FC = () => {
               <p className="text-slate-700 mb-6 text-sm sm:text-base">
                 Crescimento vem das decisões e das conexões certas.
               </p>
-
+              <a href="https://plataformamiami.com/capitalconnection-checkout">
               <Button fullWidth withIcon className="py-1 md:py-4 text-lg">
                 QUERO ACELERAR MEU NEGÓCIO
               </Button>
-
+</a>
               <p className="text-xs text-center text-slate-700 mt-4">
                 Networking • Conteúdo • Estratégia
               </p>
