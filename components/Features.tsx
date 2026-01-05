@@ -69,7 +69,7 @@ export const Features: React.FC = () => {
       icon: Coffee,
       title: 'Coquetel & Conexão',
       description:
-        'Coquetel e recepção, criando conexões iniciais em um ambiente leve e profissional.',
+        'Coquetel de recepção, criando conexões iniciais em um ambiente leve e profissional.',
     },
     {
       icon: Users,
