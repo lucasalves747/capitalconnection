@@ -6,12 +6,17 @@ import {
   Calendar,
   Clock,
   User,
-  Coffee
+  Coffee,
 } from 'lucide-react';
 import { Button } from './Button';
 import bgQuem from '@/assets/fundo_2.png';
 
 export const Logistics: React.FC = () => {
+  // 🔗 Lendo parâmetros da URL
+  const params = new URLSearchParams(window.location.search);
+  const local = params.get('local') || 'Ambientes selecionados';
+  const data = params.get('data') || 'Vagas mensais limitadas';
+
   return (
     <>
       {/* QUEM */}
@@ -19,7 +24,6 @@ export const Logistics: React.FC = () => {
         id="quem"
         className="relative py-6 sm:py-20 overflow-hidden"
       >
-        {/* Background */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat lg:bg-fixed"
           style={{ backgroundImage: `url(${bgQuem})` }}
@@ -45,7 +49,7 @@ export const Logistics: React.FC = () => {
                   'Busca crescimento com estratégia',
                   'Valoriza ambientes de alto nível',
                   'Quer ampliar visão e decisões',
-                  'Empresas crescem quando empresários crescem'
+                  'Empresas crescem quando empresários crescem',
                 ].map((item, index) => (
                   <div key={index} className="flex gap-3">
                     <div className="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center mt-0.5">
@@ -76,7 +80,9 @@ export const Logistics: React.FC = () => {
                 </div>
 
                 <div className="flex items-end gap-2 mb-6">
-                  <span className="text-5xl font-extrabold text-blue-600">25+</span>
+                  <span className="text-5xl font-extrabold text-blue-600">
+                    25+
+                  </span>
                   <span className="text-base text-slate-700 leading-tight">
                     anos de <br /> experiência
                   </span>
@@ -126,10 +132,10 @@ export const Logistics: React.FC = () => {
           <div className="grid gap-10 lg:grid-cols-2 items-center">
             <div className="space-y-4">
               {[
-                { icon: Clock, title: 'Duração', desc: '3,5h de imersão' },
-                { icon: Coffee, title: 'Início', desc: 'Coffee break & networking' },
-                { icon: MapPin, title: 'Local', desc: 'Ambientes selecionados' },
-                { icon: Calendar, title: 'Datas', desc: 'Vagas mensais limitadas' }
+                { icon: Clock, title: 'Duração', desc: '3h de imersão' },
+                { icon: Coffee, title: 'Início', desc: 'Coquetel & networking' },
+                { icon: MapPin, title: 'Local', desc: local },
+                { icon: Calendar, title: 'Data', desc: data },
               ].map((item, i) => (
                 <div
                   key={i}
@@ -159,11 +165,13 @@ export const Logistics: React.FC = () => {
               <p className="text-slate-700 mb-6 text-sm sm:text-base">
                 Crescimento vem das decisões e das conexões certas.
               </p>
+
               <a href="https://plataformamiami.com/capitalconnection-checkout">
-              <Button fullWidth withIcon className="py-1 md:py-4 text-lg">
-                QUERO ACELERAR MEU NEGÓCIO
-              </Button>
-</a>
+                <Button fullWidth withIcon className="py-1 md:py-4 text-lg">
+                  QUERO ACELERAR MEU NEGÓCIO
+                </Button>
+              </a>
+
               <p className="text-xs text-center text-slate-700 mt-4">
                 Networking • Conteúdo • Estratégia
               </p>
