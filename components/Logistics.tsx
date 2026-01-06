@@ -11,11 +11,26 @@ import {
 import { Button } from './Button';
 import bgQuem from '@/assets/fundo_2.png';
 
+// 🔗 LISTA DE CHECKOUTS (ESCALÁVEL)
+const CHECKOUT_URLS: Record<string, string> = {
+  '1': 'https://plataformamiami.com/capitalconnection-checkout',
+  '2': 'https://plataformamiami.com/capitalconnection-checkout-20',
+  
+};
+
 export const Logistics: React.FC = () => {
   // 🔗 Lendo parâmetros da URL
   const params = new URLSearchParams(window.location.search);
+
   const local = params.get('local') || 'Ambientes selecionados';
   const data = params.get('data') || 'Vagas mensais limitadas';
+
+  const checkoutParam = params.get('checkout');
+
+  // 🎯 Checkout final (com fallback)
+  const checkoutUrl =
+    (checkoutParam && CHECKOUT_URLS[checkoutParam]) ||
+    'https://plataformamiami.com/capitalconnection-checkout';
 
   return (
     <>
@@ -166,7 +181,8 @@ export const Logistics: React.FC = () => {
                 Crescimento vem das decisões e das conexões certas.
               </p>
 
-              <a href="https://plataformamiami.com/capitalconnection-checkout">
+              {/* 🔗 BOTÃO COM CHECKOUT DINÂMICO */}
+              <a href={checkoutUrl}>
                 <Button fullWidth withIcon className="py-1 md:py-4 text-lg">
                   QUERO ACELERAR MEU NEGÓCIO
                 </Button>
