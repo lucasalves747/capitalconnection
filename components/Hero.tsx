@@ -1,9 +1,29 @@
 import React from 'react';
 import { Button } from './Button';
-import { Coffee, Clock, CheckCircle } from 'lucide-react';
+import { Coffee, Clock, CheckCircle , MapPin,Calendar} from 'lucide-react';
+const CHECKOUT_URLS: Record<string, string> = {
+  '1': 'https://plataformamiami.com/capitalconnection-checkout',
+  '2': 'https://plataformamiami.com/capitalconnection-checkout-20',
+  
+};
+
 
 export const Hero: React.FC = () => {
+  
+  const params = new URLSearchParams(window.location.search);
+
+  const local = params.get('local') || 'Ambientes selecionados';
+  const data = params.get('data') || 'Vagas mensais limitadas';
+
+  const checkoutParam = params.get('checkout');
+
+  // 🎯 Checkout final (com fallback)
+  const checkoutUrl =
+    (checkoutParam && CHECKOUT_URLS[checkoutParam]) ||
+    'https://plataformamiami.com/capitalconnection-checkout';
+
   return (
+    <>
     <section className="relative pt-16 pb-10 sm:pt-20 sm:pb-14 lg:pt-36 lg:pb-20 overflow-hidden bg-slate-50">
       
       {/* Background Gradients (menores no mobile) */}
@@ -90,5 +110,87 @@ export const Hero: React.FC = () => {
         }
       `}</style>
     </section>
+
+    <section
+  id="horario"
+  className="relative py-16 sm:py-24 bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-700 overflow-hidden"
+>
+  {/* Glow decorativo */}
+  <div className="absolute -top-32 -left-32 w-[400px] h-[400px] bg-white/10 rounded-full blur-3xl" />
+  <div className="absolute -bottom-32 -right-32 w-[400px] h-[400px] bg-indigo-400/20 rounded-full blur-3xl" />
+
+  <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    {/* Header */}
+    <div className="text-center max-w-2xl mx-auto mb-14">
+      <span className="inline-block mb-4 px-4 py-1.5 rounded-full bg-white/10 text-white text-xs tracking-widest uppercase">
+        Detalhes do Evento
+      </span>
+
+      <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-4">
+        Informações
+      </h2>
+
+      <p className="text-slate-200 text-sm sm:text-base">
+        Uma experiência estratégica desenhada para gerar clareza,
+        conexões e decisões reais.
+      </p>
+    </div>
+
+    {/* Conteúdo */}
+    <div className="grid gap-10 lg:grid-cols-2 items-center">
+      {/* Cards */}
+      <div className="grid gap-5">
+        {[
+          { icon: Clock, title: 'Duração', desc: '3h de imersão estratégica' },
+          { icon: Coffee, title: 'Início', desc: 'Coquetel & networking qualificado' },
+          { icon: MapPin, title: 'Local', desc: local },
+          { icon: Calendar, title: 'Data', desc: data },
+        ].map((item, i) => (
+          <div
+            key={i}
+            className="flex items-start gap-4 p-5 rounded-2xl bg-white/90 backdrop-blur shadow-lg"
+          >
+            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-600 text-white flex items-center justify-center shadow-md">
+              <item.icon className="w-5 h-5" />
+            </div>
+
+            <div>
+              <h4 className="font-semibold text-slate-900 mb-0.5">
+                {item.title}
+              </h4>
+              <p className="text-sm text-slate-600 leading-relaxed">
+                {item.desc}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Bloco de impacto */}
+      <div className="text-center lg:text-left space-y-6">
+        <h3 className="text-2xl sm:text-3xl font-bold text-white">
+          Um ambiente feito para
+          <span className="block text-indigo-200">
+            quem decide crescer de verdade
+          </span>
+        </h3>
+
+        <p className="text-slate-200 text-sm sm:text-base max-w-md mx-auto lg:mx-0">
+          Aqui você não vem apenas aprender — você vem se conectar com
+          pessoas que jogam o jogo em alto nível.
+        </p>
+
+        <button
+          onClick={() => document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' })}
+          className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-white text-blue-700 font-semibold shadow-xl hover:scale-[1.02] transition"
+        >
+          Garantir Minha Presença
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+      </>
   );
 };
