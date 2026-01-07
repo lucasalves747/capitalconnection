@@ -30,7 +30,7 @@ export const Logistics: React.FC = () => {
   // 🎯 Checkout final (com fallback)
   const checkoutUrl =
     (checkoutParam && CHECKOUT_URLS[checkoutParam]) ||
-    'https://plataformamiami.com/capitalconnection-checkout';
+    'https://link.salee.ai/widget/survey/qaHyd4n3NoY4TVQxYHDY';
 
   return (
     <>
