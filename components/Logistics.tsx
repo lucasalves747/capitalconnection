@@ -13,8 +13,8 @@ import bgQuem from '@/assets/fundo_2.png';
 
 // 🔗 LISTA DE CHECKOUTS (ESCALÁVEL)
 const CHECKOUT_URLS: Record<string, string> = {
-  '1': 'https://plataformamiami.com/capitalconnection-checkout',
-  '2': 'https://plataformamiami.com/capitalconnection-checkout-20',
+  '1': 'https://link.salee.ai/widget/survey/qaHyd4n3NoY4TVQxYHDY',
+  '2': 'https://link.salee.ai/widget/survey/wPpbjEWYMY1qCuiK6Tu6',
   
 };
 
